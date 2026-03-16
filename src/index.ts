@@ -34,6 +34,7 @@ const effortlesscss = () => {
             // 处理动画类，如animation[fade-in_1s_linear_infinite]
             const value = cls.replace("animation-[", "").replace("]", "");
             const vList = value.split("_");
+            // 获取动画名称
             const name = vList[0];
             if (
               PREDEFINED_KEYFRAMES[name as keyof typeof PREDEFINED_KEYFRAMES]
