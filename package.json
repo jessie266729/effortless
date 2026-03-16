@@ -1,0 +1,65 @@
+{
+  "name": "effortlesscss",
+  "version": "1.0.0",
+  "description": "EffortlessCSS - Dynamic CSS generation from className attributes",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type-check": "tsc --noEmit",
+    "build:ts": "tsc",
+    "dev:ts": "tsc -w",
+    "build:watch": "rollup -c --watch"
+  },
+  "keywords": [
+    "css",
+    "postcss",
+    "className",
+    "effortlesscss"
+  ],
+  "author": "jessie.x.li <jessie.x.li@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/effortlesscss.git"
+  },
+  "homepage": "https://github.com/your-username/effortlesscss#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/effortlesscss/issues"
+  },
+  "dependencies": {
+    "postcss": "^8.4.38"
+  },
+  "devDependencies": {
+    "rollup": "^4.0.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
