@@ -1,5 +1,5 @@
 {
-  "name": "effortlesscss",
+  "name": "effortless",
   "version": "1.0.0",
   "description": "EffortlessCSS - Dynamic CSS generation from className attributes",
   "main": "dist/index.js",

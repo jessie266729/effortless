@@ -25,14 +25,15 @@ module.exports = defineConfig({
       exclude: "node_modules/**",
       presets: [["@babel/preset-env", { targets: { node: "14" } }]],
     }),
-    // terser({
-    //   format: {
-    //     comments: false, // 移除注释
-    //   },
-    //   compress: {
-    //     drop_console: true, // 移除console语句
-    //     drop_debugger: true, // 移除debugger语句
-    //   },
-    // }),
-  ],
+    process.env.NODE_ENV === "production" &&
+      terser({
+        format: {
+          comments: false,
+        },
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      }),
+  ].filter(Boolean),
 });
