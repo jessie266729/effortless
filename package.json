@@ -1,7 +1,7 @@
 {
-  "name": "effortless",
+  "name": "@jessieme/effortless",
   "version": "1.0.0",
-  "description": "EffortlessCSS - Dynamic CSS generation from className attributes",
+  "description": "A modern PostCSS plugin for dynamic CSS generation from className attributes with built-in animations and validation",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -24,23 +24,41 @@
     "type-check": "tsc --noEmit",
     "build:ts": "tsc",
     "dev:ts": "tsc -w",
-    "build:watch": "rollup -c --watch"
+    "build:watch": "rollup -c --watch",
+    "prepublishOnly": "npm run build && npm run type-check",
+    "prepack": "npm run build",
+    "preversion": "npm run type-check",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags",
+    "pack": "npm pack",
+    "dry-run": "npm publish --dry-run",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish"
   },
   "keywords": [
     "css",
     "postcss",
     "className",
-    "effortlesscss"
+    "effortless"
   ],
-  "author": "jessie.x.li <jessie.x.li@outlook.com>",
+  "author": {
+    "name": "Jessie",
+    "email": "jessie266729@qq.com",
+    "url": "https://github.com/jessie266729"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/effortlesscss.git"
+    "url": "https://github.com/jessie266729/effortless.git"
   },
-  "homepage": "https://github.com/your-username/effortlesscss#readme",
+  "homepage": "https://github.com/jessie266729/effortless#readme",
   "bugs": {
-    "url": "https://github.com/your-username/effortlesscss/issues"
+    "url": "https://github.com/jessie266729/effortless/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/jessie266729"
   },
   "dependencies": {
     "postcss": "^8.4.38"

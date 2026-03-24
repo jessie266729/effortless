@@ -2,6 +2,7 @@ import path from "path";
 import { getScannedFiles, scanAllFiles } from "./utils/tools";
 import postcss from "postcss";
 import { generateCSS } from "./utils/generateCSS";
+
 const effortlesscss = () => {
   return {
     postcssPlugin: "effortless",
@@ -37,7 +38,7 @@ const effortlesscss = () => {
         }
 
         // 注入CSS到PostCSS结果中
-        root.removeAll();
+        // root.removeAll();
         root.append(postcss.parse(css));
       } catch (error) {
         console.error("EffortlessCSS error:", error);
